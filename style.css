@@ -1,0 +1,182 @@
+/* =========================================
+   1. RESET & BASE STYLE
+   ========================================= */
+* {
+    margin: 0; /* Menghapus jarak luar bawaan seluruh elemen browser agar layout seragam */
+    padding: 0; /* Menghapus jarak dalam bawaan seluruh elemen browser agar layout seragam */
+    box-sizing: border-box; /* Memasukkan padding dan border ke hitungan total lebar elemen agar tidak melar */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Mengubah jenis bentuk teks seluruh web */
+}
+
+body {
+    background-color: #f4f7f6; /* Mengubah warna latar belakang dasar halaman menjadi abu-abu terang */
+    color: #333; /* Mengubah warna teks dasar bawaan web menjadi hitam pudar lembut */
+    display: flex; /* Mengaktifkan fitur layout flexbox pada kontainer body */
+    flex-direction: column; /* Mengatur aliran susunan elemen anak berderet lurus dari atas ke bawah */
+    min-height: 100vh; /* Memaksa tinggi halaman web minimal selalu setinggi layar monitor penuh */
+}
+
+/* =========================================
+   2. MOBILE FIRST STYLES (Layar HP / < 768px)
+   ========================================= */
+
+/* --- SECTION A: Header --- */
+.header-utama {
+    background-color: #ffffff; /* Mengatur latar belakang area kotak header menjadi putih bersih */
+    padding: 20px; /* Memberikan ruang jarak dalam area header sebesar 20 pixel */
+    display: flex; /* Mengaktifkan flexbox untuk mengatur posisi logo dan menu navigasi */
+    flex-direction: column; /* Mengatur susunan menu dan logo bertumpuk vertikal ke bawah pada mode HP */
+    align-items: center; /* Memposisikan logo dan menu tepat berada di tengah horizontal layar HP */
+    gap: 15px; /* Memberikan celah jarak pemisah sebesar 15px antara komponen logo dan menu */
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05); /* Menambahkan bayangan halus estetik di bawah batas header */
+}
+
+.logo-brand {
+    font-size: 24px; /* Mengatur ukuran besar huruf teks logo brand menjadi 24px */
+    font-weight: bold; /* Mengubah ketebalan huruf teks logo brand menjadi tebal */
+    color: #e63946; /* Memberikan warna merah cerah khas identitas startup pada teks logo */
+}
+
+.navigasi-menu ul {
+    list-style: none; /* Menghilangkan tanda titik peluru bawaan list html pada menu navigasi */
+    display: flex; /* Mengaktifkan mode susunan flexbox khusus untuk deretan list menu */
+    flex-direction: column; /* Mengatur arah aliran link menu navigasi bertumpuk ke bawah di HP */
+    text-align: center; /* Mengatur teks link navigasi menu agar berada di posisi rata tengah */
+    gap: 12px; /* Mengatur celah jarak pemisah konstan sebesar 12px antar baris tombol menu */
+}
+
+.navigasi-menu a {
+    text-decoration: none; /* Menghilangkan garis bawah bawaan link pada tombol menu navigasi */
+    color: #1d3557; /* Mengubah warna teks link navigasi menjadi warna biru gelap formal */
+    font-weight: 600; /* Menyetel ketebalan teks tombol menu sedikit tebal agar tegas */
+}
+
+/* --- SECTION B: Grid Layanan --- */
+.area-layanan {
+    padding: 60px 20px; /* Jarak ruang konten inti: 60px atas-bawah dan 20px batas kiri-kanan */
+    flex: 1; /* Trik mendorong elemen kaki (footer) otomatis turun mentok ke bagian paling bawah layar */
+    display: flex; /* Mengaktifkan flexbox agar konten di dalamnya bisa diatur posisinya */
+    align-items: center; /* Menyeimbangkan posisi kotak susunan kartu tepat di tengah layar vertikal */
+    justify-content: center; /* Menyeimbangkan posisi kotak susunan kartu tepat di tengah layar horizontal */
+}
+
+.area-layanan section {
+    width: 100%; /* Mengharuskan bagian section mengambil lebar penuh kontainer induknya */
+}
+
+.grid-container {
+    display: grid; /* Mengaktifkan sistem penataan letak dua dimensi modern CSS Grid */
+    grid-template-columns: 1fr; /* Mengunci formasi susunan kartu menjadi 1 kolom utuh ke bawah pada mode HP */
+    gap: 20px; /* Memberikan celah renggang pemisah antar kotak kartu layanan sebesar 20px */
+    max-width: 1100px; /* Membatasi lebar kotak grid container agar tidak melar melebihi 1100px di PC */
+    margin: 0 auto; /* Trik memposisikan seluruh blok susunan grid agar pas di tengah halaman web */
+}
+
+.kartu-item {
+    background-color: #ffffff; /* Mengatur warna latar belakang kotak kartu layanan menjadi putih bersih */
+    padding: 35px 25px; /* Mengatur jarak dalam kartu: 35px bagian atas-bawah dan 25px kiri-kanan */
+    border-radius: 12px; /* Mengubah ujung lekukan sudut kotak kartu yang tajam menjadi membulat tumpul */
+    text-align: center; /* Memaksa semua isi komponen teks, ikon, judul di dalam kartu menjadi rata tengah */
+    box-shadow: 0 6px 15px rgba(0,0,0,0.04); /* Menambahkan bayangan pudar lembut di sekeliling kotak kartu */
+    border: 1px solid #f0f0f0; /* Memberikan batas garis tepi luar tipis berwarna abu-abu sangat pudar */
+}
+
+.kartu-item .ikon-layanan {
+    font-size: 45px; /* Memperbesar ukuran tampilan gambar emoji/ikon menjadi skala 45px */
+    margin-bottom: 20px; /* Memberikan jarak pemisah antara komponen ikon dengan judul di bawahnya */
+}
+
+.kartu-item h3 {
+    margin-bottom: 15px; /* Memberikan jarak renggang bawah antara baris judul dengan paragraf deskripsi */
+    color: #1d3557; /* Mengubah warna teks judul layanan kartu menjadi biru tua gelap formal */
+    font-size: 20px; /* Mengatur ukuran besar teks judul utama kartu sebesar 20px */
+}
+
+.kartu-item p {
+    font-size: 15px; /* Mengatur ukuran besar teks kalimat paragraf deskripsi kartu sebesar 15px */
+    line-height: 1.6; /* Mengatur kerenggangan jarak antar baris teks deskripsi agar nyaman dibaca */
+    color: #457b9d; /* Mengubah warna teks kalimat paragraf deskripsi menjadi warna biru pudar lembut */
+}
+
+/* --- SECTION C: Footer --- */
+.footer-utama {
+    background-color: #1d3557; /* Mengubah warna dasar latar belakang kotak footer menjadi biru tua gelap */
+    color: #ffffff; /* Mengubah semua warna teks tulisan di dalam area footer menjadi putih bersih */
+    padding: 40px 20px; /* Ruang dalam footer: 40px bagian batas atas-bawah dan 20px batas kiri-kanan */
+    display: flex; /* Mengaktifkan sistem layout flexbox untuk mengelola posisi komponen footer */
+    flex-direction: column; /* Mengatur aliran blok info kiri dan kanan agar bertumpuk ke bawah di mode HP */
+    text-align: center; /* Memastikan semua teks tulisan di dalam footer berada di posisi rata tengah HP */
+    gap: 25px; /* Memberikan celah jarak pemisah antara susunan komponen atas dan bawah di footer */
+}
+
+.footer-kiri h2 {
+    color: #f1faee; /* Mengubah warna teks nama perusahaan di footer menjadi putih pastel terang */
+    margin-bottom: 8px; /* Memberikan jarak batas bawah tipis dari nama menuju kalimat slogan */
+}
+
+.footer-kiri p {
+    color: #a8dadc; /* Mengubah warna teks slogan perusahaan menjadi warna biru toska muda lembut */
+    font-size: 15px; /* Mengatur ukuran huruf teks kalimat slogan di footer sebesar 15px */
+}
+
+.footer-kiri .teks-copyright {
+    margin-top: 20px; /* Mendorong baris teks keterangan copyright menjauh ke arah bawah */
+    font-size: 13px; /* Mengecilkan ukuran huruf teks keterangan copyright menjadi 13px */
+    color: #8d99ae; /* Mengubah warna teks copyright menjadi abu-abu pudar agar tidak terlalu mencolok */
+}
+
+.footer-kanan ul {
+    list-style: none; /* Menghilangkan tanda titik peluru bawaan list html pada menu tautan kaki */
+    display: flex; /* Mengaktifkan susunan flexbox khusus deretan link menu navigasi footer */
+    flex-direction: column; /* Mengatur aliran menu link footer agar berbaris lurus ke bawah pada mode HP */
+    gap: 12px; /* Memberikan celah jarak renggang antar baris tautan link menu navigasi footer */
+}
+
+.footer-kanan a {
+    color: #f1faee; /* Mengubah warna teks link menu footer menjadi warna putih pastel terang */
+    text-decoration: none; /* Menghilangkan garis bawah bawaan tag tautan link pada menu footer */
+    font-size: 15px; /* Mengatur ukuran besar huruf teks menu navigasi footer sebesar 15px */
+}
+
+/* =========================================
+   3. MEDIA QUERIES: TABLET (Min-width: 768px)
+   ========================================= */
+@media (min-width: 768px) {
+    .header-utama {
+        flex-direction: row; /* Mengubah susunan header dari menumpuk menjadi horizontal menyamping sejajar */
+        justify-content: space-between; /* Menarik logo ke ujung paling kiri dan menu navigasi ke ujung paling kanan */
+        padding: 20px 50px; /* Memperlebar ruang dalam header bagian kiri-kanan menjadi 50px di tablet */
+    }
+
+    .navigasi-menu ul {
+        flex-direction: row; /* Mengubah aliran link navigasi dari vertikal bertumpuk menjadi horizontal sejajar */
+        gap: 30px; /* Memperlebar celah jarak renggang horizontal antar link menu menjadi 30px */
+    }
+
+    .grid-container {
+        grid-template-columns: repeat(2, 1fr); /* FORMULASI GRID: Memecah susunan kartu menjadi 2 kolom sejajar rata */
+        gap: 30px; /* Menentukan celah pemisah antar kotak kartu layanan sebesar 30px */
+    }
+
+    .footer-utama {
+        flex-direction: row; /* Mengubah susunan isi footer dari menumpuk menjadi horizontal menyamping sejajar */
+        justify-content: space-between; /* Memisahkan blok info di ujung kiri dan blok link menu di ujung kanan */
+        text-align: left; /* Mengembangkan format perataan teks kembali menjadi rata kiri standar formal */
+        padding: 50px; /* Memperlebar ukuran ruang dalam seluruh area footer pada ukuran layar tablet */
+    }
+
+    .footer-kanan ul {
+        flex-direction: row; /* Mengubah aliran menu navigasi cepat footer menjadi berjejer horizontal menyamping */
+        gap: 25px; /* Mengatur celah jarak renggang mendatar antar link navigasi footer sebesar 25px */
+    }
+}
+
+/* =========================================
+   4. MEDIA QUERIES: DESKTOP (Min-width: 1024px)
+   ========================================= */
+@media (min-width: 1024px) {
+    .grid-container {
+        grid-template-columns: repeat(3, 1fr); /* FORMULASI GRID: Memecah susunan kartu menjadi 3 kolom sejajar penuh */
+        gap: 40px; /* Merenggangkan celah pemisah antar kartu menjadi 40px agar seimbang di monitor besar */
+    }
+}
